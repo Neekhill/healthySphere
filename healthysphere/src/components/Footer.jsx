@@ -4,7 +4,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import RoomIcon from "@mui/icons-material/Room";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import PhoneIcon from "@mui/icons-material/Phone";
-import logo from "../assets/logo.jpeg";
+import healthysphere from "../assets/healthysphere.png";
 import styled from "styled-components";
 import { mobile, tablet } from "../responsive";
 
@@ -12,7 +12,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 30px 20px;
-  background: #fff; /* linear-gradient(
+  background: #fef6f6; /* linear-gradient(
 105.21deg
 ,#3743ab 2.85%,#141b56 99.41%) */
   color: black;
@@ -68,7 +68,7 @@ const Footer = () => {
   return (
     <Container>
       <Left>
-        <Logo src={logo}></Logo>
+        <Logo src={healthysphere}></Logo>
         <Desc>
           A <Bold>Software Engineer</Bold> building <Bold>Full Stack </Bold>
           Websites and Web Applications that leads to the success of the overall

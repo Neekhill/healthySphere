@@ -1,9 +1,12 @@
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import WhyHealthySphere from "./components/WhyHealthySphere";
 
 function App() {
   return (
     <div>
-      <h1>HealthySphere</h1>
+      <Navbar />
+      <WhyHealthySphere />
       <Footer />
     </div>
   );
