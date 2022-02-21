@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import { largeMobile, mobile, tablet } from "../responsive";
 import MenuIcon from "@mui/icons-material/Menu";
+import ClearIcon from "@mui/icons-material/Clear";
 import { useState } from "react";
 import healthysphere from "../assets/healthysphere.png";
 
@@ -63,6 +64,13 @@ const MainMenu = styled.div`
 `;
 const DropDownMenu = styled.div`
   margin-top: 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 990;
+  top: 60px;
+  left: ${(props) => (props.show ? "0px" : "-850px")};
+  background-color: #fff;
+  transition: all 0.3s ease;
 `;
 const DDMenuItem = styled.div`
   height: 30px;
@@ -72,6 +80,12 @@ const DDMenuItem = styled.div`
   font-size: 16px;
   cursor: pointer;
   color: balck;
+  top: 60px;
+  background-color: #f7f7f7;
+  text-align: center;
+  &:hover {
+    background-color: #f7f7f7;
+  }
 `;
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -103,12 +117,12 @@ const Navbar = () => {
             </Left>
             <Right>
               <MenuItem onClick={handleClick}>
-                <MenuIcon></MenuIcon>
+                {showMenu ? <ClearIcon></ClearIcon> : <MenuIcon></MenuIcon>}
               </MenuItem>
             </Right>
           </MainMenu>
-          {showMenu && (
-            <DropDownMenu>
+          {
+            <DropDownMenu show={showMenu}>
               <DDMenuItem>HOME</DDMenuItem>
 
               <DDMenuItem>ABOUT</DDMenuItem>
@@ -117,7 +131,7 @@ const Navbar = () => {
 
               <DDMenuItem>CONTACT</DDMenuItem>
             </DropDownMenu>
-          )}
+          }
         </WrapperSmall>
       </ContainerSmall>
     </>
