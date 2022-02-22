@@ -9,12 +9,15 @@ import styled from "styled-components";
 import { mobile, tablet } from "../responsive";
 
 const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 30px 20px;
   background: #fef6f6; /* linear-gradient(
 105.21deg
 ,#3743ab 2.85%,#141b56 99.41%) */
+`;
+const TopWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px 0 20px;
+
   color: black;
   ${tablet({ flexDirection: "column" })}
   ${mobile({ flexDirection: "column", padding: "20px 5px" })}
@@ -25,14 +28,12 @@ const Left = styled.div`
   padding: 2rem;
   flex-direction: column;
 `;
-const Logo = styled.img`
-  height: 75px;
-  width: 120px;
-  object-fit: cover;
-`;
+const LogoTitle = styled.h2``;
 const Desc = styled.p`
   margin: 20px 0px;
   max-width: 350px;
+  font-size: 14px;
+  color: #414146;
 `;
 const Bold = styled.b``;
 const SocialContainer = styled.div`
@@ -63,45 +64,69 @@ const ContactItem = styled.div`
   display: flex;
   align-items: center;
 `;
-
+const BottomWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+const Logo = styled.img`
+  height: 120px;
+  width: 160px;
+  object-fit: cover;
+`;
+const CopyRight = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  color: #414146;
+`;
 const Footer = () => {
   return (
     <Container>
-      <Left>
-        <Logo src={healthysphere}></Logo>
-        <Desc>
-          A <Bold>Software Engineer</Bold> building <Bold>Full Stack </Bold>
-          Websites and Web Applications that leads to the success of the overall
-          product.Check out some of my work in the
-          <Bold> Projects</Bold> section.
-        </Desc>
-        <SocialContainer>
-          <SocialIcon color="FF0000">
-            <YouTubeIcon />
-          </SocialIcon>
-          <SocialIcon color="E4405f">
-            <InstagramIcon />
-          </SocialIcon>
-          <SocialIcon color="0077b5">
-            <FacebookIcon />
-          </SocialIcon>
-        </SocialContainer>
-      </Left>
+      <TopWrapper>
+        <Left>
+          <LogoTitle>HealthySphere</LogoTitle>
+          <Desc>
+            A <Bold>Software Engineer</Bold> building <Bold>Full Stack </Bold>
+            Websites and Web Applications that leads to the success of the
+            overall product.Check out some of my work in the
+            <Bold> Projects</Bold> section.
+          </Desc>
+          <SocialContainer>
+            <SocialIcon color="FF0000">
+              <YouTubeIcon />
+            </SocialIcon>
+            <SocialIcon color="E4405f">
+              <InstagramIcon />
+            </SocialIcon>
+            <SocialIcon color="0077b5">
+              <FacebookIcon />
+            </SocialIcon>
+          </SocialContainer>
+        </Left>
 
-      <Right>
-        <Title>Contact</Title>
-        <ContactItem>
-          <RoomIcon style={{ marginRight: "10px" }} /> 5,Westend Marg,
-          Saidulajab, New Delhi-110030
-        </ContactItem>
-        <ContactItem>
-          <PhoneIcon style={{ marginRight: "10px" }} /> +91 8178067784
-        </ContactItem>
-        <ContactItem>
-          <MailOutlineIcon style={{ marginRight: "10px" }} />{" "}
-          mail@healthysphere.in
-        </ContactItem>
-      </Right>
+        <Right>
+          <Title>Contact</Title>
+          <ContactItem>
+            <RoomIcon style={{ marginRight: "10px" }} /> 5,Westend Marg,
+            Saidulajab, New Delhi-110030
+          </ContactItem>
+          <ContactItem>
+            <PhoneIcon style={{ marginRight: "10px" }} /> +91 8178067784
+          </ContactItem>
+          <ContactItem>
+            <MailOutlineIcon style={{ marginRight: "10px" }} />{" "}
+            mail@healthysphere.in
+          </ContactItem>
+        </Right>
+      </TopWrapper>
+      <BottomWrapper>
+        <Logo src={healthysphere}></Logo>
+        <CopyRight>
+          Copyright © 2021,Healthysphere.All rights reserved.
+        </CopyRight>
+      </BottomWrapper>
     </Container>
   );
 };
