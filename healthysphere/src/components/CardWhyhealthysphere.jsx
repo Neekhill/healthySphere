@@ -21,12 +21,15 @@ const Image = styled.img`
 const Title = styled.h3`
   text-align: center;
   margin: 20px 0;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
 `;
 const Desc = styled.p`
   text-align: center;
-  font-weight: 300;
   max-width: 270px;
+  font-size: 14px;
+  color: #414146;
 `;
 
 const CardWhyhealthysphere = ({ img, title, desc }) => {

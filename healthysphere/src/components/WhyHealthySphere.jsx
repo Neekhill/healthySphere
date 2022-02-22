@@ -14,12 +14,12 @@ const WhyHealthySphereData = [
   {
     img: video,
     title: "Video Consultation",
-    desc: "Best-in-class video consultation experience using your mobile phone at anytime and from anywhere",
+    desc: "Best-in-class video consultation experience using your mobile phone anytime anywhere",
   },
   {
     img: delivery,
     title: "Medicine Delivery",
-    desc: "We will deliver the medicines dispensed or prescribed by the doctor to your doorstep",
+    desc: "We deliver the medicines dispensed or prescribed by the doctor to your doorstep",
   },
 ];
 
@@ -27,9 +27,10 @@ const MainContainer = styled.div`
   padding: 2rem;
 `;
 const Title = styled.h1`
-  font-weight: 300;
+  font-size: 30px;
+  font-weight: 700;
   text-align: center;
-  margin: 20px 0 80px 0;
+  margin: 40px;
 `;
 const CardWrapper = styled.div`
   display: flex;

@@ -1,3 +1,4 @@
+import ArticleComponent from "./components/ArticleComponent";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Testimonials from "./components/Testimonials";
@@ -8,6 +9,7 @@ function App() {
     <div>
       <Navbar />
       <WhyHealthySphere />
+      <ArticleComponent />
       <Testimonials />
       <Footer />
     </div>

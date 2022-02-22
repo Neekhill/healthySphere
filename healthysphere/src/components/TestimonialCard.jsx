@@ -23,7 +23,7 @@ const Testimony = styled.div`
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: 100px;
-  color: #919090;
+  color: #414146;
 `;
 const PersonDetail = styled.div`
   padding: 0 20px;
