@@ -13,9 +13,9 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   z-index: 999;
-
+  border-bottom: 0.1px solid #eaeaea;
   ${tablet({ display: "none" })}
-  ${mobile({ height: "30px", display: "hidden" })}
+  ${mobile({ height: "30px", display: "hidden" })};
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -54,6 +54,7 @@ const ContainerSmall = styled.div`
   z-index: 999;
   background-color: #fff;
   display: none;
+  border-bottom: 0.1px solid #eaeaea;
   ${tablet({ display: "block" })}
 `;
 const WrapperSmall = styled.div``;

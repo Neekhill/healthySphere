@@ -1,9 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { largeMobile } from "../responsive";
 
 const CardContainer = styled.div`
   max-width: 280px;
   margin: 0 10px;
+  ${largeMobile({
+    margin: "20px 0",
+  })}
 `;
 const Image = styled.img`
   width: 280px;

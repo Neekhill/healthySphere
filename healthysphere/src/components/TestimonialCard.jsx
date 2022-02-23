@@ -1,38 +1,34 @@
 import React from "react";
-import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
-import FormatQuoteOutlinedIcon from "@mui/icons-material/FormatQuoteOutlined";
 import styled from "styled-components";
+import nikhil from "../assets/nikhil.jpeg";
+import { largeMobile, mobile } from "../responsive";
 
 const CardContainer = styled.div`
   margin: 20px;
-  padding: 20px;
   min-width: 380px;
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid #f0f0f5;
+  -webkit-box-shadow: 0 3px 6px 0 rgb(45 45 51 / 8%);
+  box-shadow: 0 3px 6px 0 rgb(45 45 51 / 8%);
+
   &:hover {
     -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 20px -10px rgba(0, 0, 0, 0.75);
     position: relative;
     transition: all 0.5s ease;
   }
-`;
-const QuoteContainer = styled.div`
-  text-align: right;
-  color: #e1dfdf;
-`;
-const Testimony = styled.div`
-  padding: 20px;
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: 100px;
-  color: #414146;
+
+  ${largeMobile({ minWidth: "330px" })}
+  ${mobile({ minWidth: "290px" })}
 `;
 const PersonDetail = styled.div`
-  padding: 0 20px;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
 `;
-const AvatarContainer = styled.span`
+const Left = styled.div``;
+const Image = styled.img`
   height: 40px;
   width: 40px;
   display: flex;
@@ -40,17 +36,40 @@ const AvatarContainer = styled.span`
   align-items: center;
   margin-right: 10px;
   border-radius: 50%;
-  background-color: #f7f7f7;
+  object-fit: cover;
 `;
-const Name = styled.span`
-  font-weight: 400;
+const Right = styled.div``;
+const Name = styled.div`
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
 `;
-const TestimonialCard = () => {
+const Occupation = styled.div`
+  margin-top: 3px;
+  line-height: 1.4;
+  font-size: 14px;
+`;
+
+const Testimony = styled.div`
+  margin-bottom: 20px;
+  color: #676768;
+  margin-top: 16px;
+  line-height: 1.43;
+  font-size: 14px;
+`;
+
+const TestimonialCard = ({ img, name, occupation }) => {
   return (
     <CardContainer>
-      <QuoteContainer>
-        <FormatQuoteOutlinedIcon style={{ fontSize: "60" }} />
-      </QuoteContainer>
+      <PersonDetail>
+        <Left>
+          <Image src={img}></Image>
+        </Left>
+        <Right>
+          <Name>{name}</Name>
+          <Occupation>{occupation}</Occupation>
+        </Right>
+      </PersonDetail>
       <Testimony>
         Lorem Ipsum has been the industry's standard dummy text ever since the
         1500s, when an unknown printer took a galley of type and scrambled it to
@@ -58,12 +77,6 @@ const TestimonialCard = () => {
         also the leap into electronic typesetting, remaining essentially
         unchanged.
       </Testimony>
-      <PersonDetail>
-        <AvatarContainer>
-          <PermIdentityOutlinedIcon />
-        </AvatarContainer>
-        <Name>Nikhil yadav</Name>
-      </PersonDetail>
     </CardContainer>
   );
 };

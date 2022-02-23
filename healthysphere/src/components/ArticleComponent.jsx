@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ArticleCard from "./ArticleCard";
+import { large, largeMobile } from "../responsive";
 const ArticleCardData = [
   {
     tag: "CORONAVIRUS",
@@ -14,7 +15,11 @@ const ArticleCardData = [
   },
 ];
 
-const ArticleContainer = styled.div``;
+const ArticleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 const Hr = styled.hr`
   border: 0.3px solid #eaeaea;
   width: 80%;
@@ -24,6 +29,11 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: 4rem;
+  ${large({
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItem: "center",
+  })}
 `;
 const Left = styled.div`
   max-width: 380px;
@@ -41,7 +51,7 @@ const Desc = styled.p`
 `;
 const Button = styled.button`
   padding: 15px 30px;
-  background-color: #14bef0;
+  background-color: teal; /* #14bef0; */
   cursor: pointer;
   font-size: 14px;
   text-decoration: none;
@@ -54,6 +64,11 @@ const Button = styled.button`
 `;
 const Right = styled.div`
   display: flex;
+  ${largeMobile({
+    flexDirection: "column",
+    justifyContent: "center",
+    margin: "0 20px",
+  })}
 `;
 const ArticleComponent = () => {
   return (
