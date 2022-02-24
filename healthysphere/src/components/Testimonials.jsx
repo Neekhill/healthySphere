@@ -3,10 +3,10 @@ import TestimonialCard from "./TestimonialCard";
 import styled from "styled-components";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { largeMobile, mobile, tablet } from "../responsive";
+import { largeMobile } from "../responsive";
 
 const Container = styled.div`
-  margin: 20px 0;
+  margin: 50px 0;
   width: 100%;
   display: flex;
   flex-direction: column;
